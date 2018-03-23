@@ -4,7 +4,6 @@
     <list default="true" id="8ed8c836-2964-489b-90e2-9c630c2a0b0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js" afterPath="$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" afterPath="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js" afterPath="$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +16,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BurgerBuilder.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BurgerBuilder.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="91" column="38" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="38" />
+            <state relative-caret-position="-179">
+              <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1521780079755" expanded="true" signature="481:581" ph="..." />
+                <marker date="1521780452963" expanded="true" signature="481:581" ph="..." />
               </folding>
             </state>
           </provider>
@@ -55,20 +54,18 @@
       <file leaf-file-name="Modal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderSummary.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrderSummary.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            <state relative-caret-position="285">
+              <caret line="19" column="61" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -182,8 +179,8 @@
         <option value="$PROJECT_DIR$/src/components/UI/Button/Button.css" />
         <option value="$PROJECT_DIR$/src/components/UI/Button/Button.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Modal/Modal.js" />
-        <option value="$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js" />
         <option value="$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js" />
+        <option value="$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js" />
       </list>
     </option>
   </component>
@@ -554,12 +551,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521663656709</updated>
-      <workItem from="1521663662133" duration="13062000" />
+      <workItem from="1521663662133" duration="13317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13062000" />
+    <option name="totallyTimeSpent" value="13317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1279" height="777" extended-state="6" />
@@ -791,6 +788,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -801,41 +806,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/Button/Button.css">
+    <entry file="file://$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="19" column="61" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="62" lean-forward="false" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/BurgerBuilder/BurgerBuilder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="91" column="38" lean-forward="false" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="38" />
+        <state relative-caret-position="-179">
+          <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1521780079755" expanded="true" signature="481:581" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Burger/OrderSummary/OrderSummary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1521780452963" expanded="true" signature="481:581" ph="..." />
           </folding>
         </state>
       </provider>
