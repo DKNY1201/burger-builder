@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Aux from '../../../hoc/Aux';
 import Button from '../../UI/Button/Button';
@@ -9,7 +9,6 @@ const orderSummary = (props) => {
             <li key={ingKey}>
                 <span style={{'textTransform': 'capitalize'}}>{ingKey}</span>: {props.ingredients[ingKey]}</li>
         ));
-
     return (
         <Aux>
             <h4>Order Summary</h4>
