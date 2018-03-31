@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ed8c836-2964-489b-90e2-9c630c2a0b0c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" afterPath="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Orders/Orders.js" afterPath="$PROJECT_DIR$/src/containers/Orders/Orders.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavigationItem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NavigationItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactData.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.js">
+      <file leaf-file-name="Orders.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/Orders/Orders.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="160">
+              <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="30" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -80,14 +79,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Orders.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Orders/Orders.js">
+      <file leaf-file-name="withErrorHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hoc/withErrorHandler/withErrorHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-217">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,10 +196,10 @@
         <option value="$PROJECT_DIR$/src/containers/Checkout/ContactData/ContactData.js" />
         <option value="$PROJECT_DIR$/src/components/Order/Order.css" />
         <option value="$PROJECT_DIR$/src/components/Order/Order.js" />
-        <option value="$PROJECT_DIR$/src/containers/Orders/Orders.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js" />
+        <option value="$PROJECT_DIR$/src/containers/Orders/Orders.js" />
       </list>
     </option>
   </component>
@@ -1155,12 +1152,12 @@
       <workItem from="1521663662133" duration="22589000" />
       <workItem from="1522046887954" duration="18000" />
       <workItem from="1522281561679" duration="5540000" />
-      <workItem from="1522464046379" duration="7960000" />
+      <workItem from="1522464046379" duration="8572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36107000" />
+    <option name="totallyTimeSpent" value="36719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1279" height="777" extended-state="6" />
@@ -1397,16 +1394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hoc/withErrorHandler/withErrorHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/Modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1562,16 +1549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Orders/Orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1620,6 +1597,24 @@
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/withErrorHandler/withErrorHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Orders/Orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
