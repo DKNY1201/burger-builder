@@ -10,10 +10,10 @@ const input = (props) => {
             inputElement = <input className={classes.InputElement} {...props.elementConfig} value={props.value}/>;
             break;
         case('textarea'):
-            inputElement = <textarea className={classes.InputElement} {...props}/>
+            inputElement = <textarea className={classes.InputElement} {...props.elementConfig} />
             break;
         default:
-            inputElement = <input className={classes.InputElement} {...props}/>;
+            inputElement = <input className={classes.InputElement} {...props.elementConfig} value={props.value}/>;
     }
 
     return (

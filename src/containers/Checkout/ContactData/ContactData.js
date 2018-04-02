@@ -72,8 +72,6 @@ class ContactData extends Component {
             price: this.props.totalPrice
         };
 
-        console.log(data);
-
         axios.post('/orders.json', data)
             .then(res => {
                 this.setState({loading: false});
@@ -85,12 +83,24 @@ class ContactData extends Component {
     }
 
     render() {
+        const formElementArray = [];
+
+        for (let key in this.state.orderForm) {
+            formElementArray.push({
+                id: key,
+                config: this.state.orderForm[key]
+            })
+        }
+
         let formData = (
             <form action="">
-                <Input elementType="..." elementConfig="..." value="..." />
-                <Input inputtype="input" type="email" name="email" placeholder="Your Email"/>
-                <Input inputtype="input" type="text" name="street" placeholder="Street"/>
-                <Input inputtype="input" type="text" name="postal" placeholder="Postal Code"/>
+                {formElementArray.map(formElement => {
+                    return <Input
+                        key={formElement.id}
+                        elementType={formElement.config.elementType}
+                        elementConfig={formElement.config.elementConfig}
+                        value={formElement.config.value} />
+                })}
                 <Button btnType="Success" clicked={this.placeOrderHandler}>Place Order</Button>
             </form>
         )
