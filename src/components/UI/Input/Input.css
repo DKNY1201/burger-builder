@@ -30,3 +30,9 @@
     border: 1px red solid;
     background-color: #fab8b8;
 }
+
+.ValidationErrorMsg {
+    color: red;
+    margin: 5px 0;
+    text-align: left;
+}
