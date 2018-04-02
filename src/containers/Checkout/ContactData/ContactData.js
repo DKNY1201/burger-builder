@@ -146,7 +146,6 @@ class ContactData extends Component {
         const isValid = this.checkValidity(updatedOrderFormElement.validation.rules, updatedOrderFormElement.value);
         updatedOrderFormElement.validation.valid = isValid;
         updatedOrderForm[formElementKey] = updatedOrderFormElement;
-        console.log(updatedOrderFormElement);
 
         this.setState({orderForm: updatedOrderForm});
     }
@@ -169,6 +168,8 @@ class ContactData extends Component {
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
+                        valid={formElement.config.validation && formElement.config.validation.valid}
+                        shouldValidate={formElement.config.validation}
                         changed={(event) => this.formElementValueChangedHandler(event, formElement.id)}
                     />
                 })}
