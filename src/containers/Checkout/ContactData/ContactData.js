@@ -96,11 +96,10 @@ class ContactData extends Component {
                 },
                 validation: {
                     rules: {
-                        require: true
                     },
                     valid: true
                 },
-                value: ''
+                value: 'fastest'
             }
         },
         loading: false,
@@ -108,6 +107,10 @@ class ContactData extends Component {
     }
 
     checkValidity(rules, value) {
+        if (!rules) {
+            return true;
+        }
+
         let isValid = true;
 
         if (rules.require) {
