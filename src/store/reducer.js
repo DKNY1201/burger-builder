@@ -1,7 +1,12 @@
 import * as actionTypes from './action';
 
 const initialState = {
-    ingredients: null,
+    ingredients: {
+        salad: 0,
+        cheese: 0,
+        meat: 0,
+        bacon: 0
+    },
     totalPrice: 0
 }
 
