@@ -20,15 +20,12 @@ class BurgerBuilder extends Component {
     // }
 
     state = {
-        totalPrice: 4,
-        purchasable: false,
         purchasing: false,
         loading: false,
         error: false
     }
 
     componentDidMount() {
-        console.log(this.props);
         axios.get("/ingredients.json")
             .then(res => {
                 this.setState({ingredients: res.data});
@@ -40,33 +37,8 @@ class BurgerBuilder extends Component {
 
     updatePurchaseState(ingredients) {
         const sumIngredients = Object.values(ingredients).reduce((sum, el) => sum + el, 0);
-        this.setState({purchasable: sumIngredients > 0});
+        return sumIngredients > 0;
     }
-
-    // addIngredientHandler = (type) => {
-    //     const newIngredients = {...this.props.ings};
-    //     newIngredients[type] = newIngredients[type] + 1;
-    //     const newTotalPrice = this.state.totalPrice + INGREDIENTS_PRICE[type];
-    //     this.setState({
-    //         ingredients: newIngredients,
-    //         totalPrice: newTotalPrice
-    //     })
-    //     this.updatePurchaseState(newIngredients);
-    // }
-    //
-    // removeIngredientHandler = (type) => {
-    //     const newIngredients = {...this.props.ings};
-    //     newIngredients[type] = newIngredients[type] - 1;
-    //     if (newIngredients[type] < 0) {
-    //         return;
-    //     }
-    //     const newTotalPrice = this.state.totalPrice - INGREDIENTS_PRICE[type];
-    //     this.setState({
-    //         ingredients: newIngredients,
-    //         totalPrice: newTotalPrice
-    //     });
-    //     this.updatePurchaseState(newIngredients);
-    // }
 
     purchasingHandler = () => {
         this.setState({purchasing: true});
@@ -115,7 +87,7 @@ class BurgerBuilder extends Component {
                         ingredientRemoved={this.props.onIngredientRemoved}
                         disabledInfo={disabledInfo}
                         price={this.props.price}
-                        purchasable={this.state.purchasable}
+                        purchasable={this.updatePurchaseState(this.props.ings)}
                         ordered={this.purchasingHandler}
                     />
                 </Aux>
