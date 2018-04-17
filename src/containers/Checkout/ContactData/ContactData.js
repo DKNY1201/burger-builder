@@ -6,6 +6,8 @@ import classes from './ContactData.css';
 import axios from '../../../axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
+import * as actions from '../../../store/actions';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler'
 
 class ContactData extends Component {
     state = {
@@ -144,14 +146,7 @@ class ContactData extends Component {
             customer: formData
         };
 
-        // axios.post('/orders.json', data)
-        //     .then(res => {
-        //         this.setState({loading: false});
-        //         this.props.history.push("/");
-        //     })
-        //     .catch(err => {
-        //         this.setState({loading: false});
-        //     });
+        this.props.onPurchaseOrder(data);
     }
 
     formElementValueChangedHandler = (event, formElementKey) => {
@@ -221,4 +216,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(ContactData);
+const mapDispatchToProps = dispatch => {
+    return {
+        onPurchaseOrder: (orderData) => dispatch(actions.purchaseOrderStart(orderData))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));
