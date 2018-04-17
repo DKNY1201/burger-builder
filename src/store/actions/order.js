@@ -9,7 +9,7 @@ export const purchaseBurgerSuccess = (id, orderData) => {
     }
 }
 
-export const purchaseBurgerFaild = (error) => {
+export const purchaseBurgerFail = (error) => {
     return {
         type: actionTypes.FETCH_INGREDIENTS_FAILED,
         error: error
@@ -24,7 +24,7 @@ export const purchaseOrderStart = (orderData) => {
                 dispatch(purchaseBurgerSuccess(res.data, orderData))
             })
             .catch(err => {
-                dispatch(purchaseBurgerFaild(err));
+                dispatch(purchaseBurgerFail(err));
             });
     }
 }
