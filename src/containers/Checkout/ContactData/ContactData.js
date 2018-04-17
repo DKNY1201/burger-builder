@@ -144,14 +144,14 @@ class ContactData extends Component {
             customer: formData
         };
 
-        axios.post('/orders.json', data)
-            .then(res => {
-                this.setState({loading: false});
-                this.props.history.push("/");
-            })
-            .catch(err => {
-                this.setState({loading: false});
-            });
+        // axios.post('/orders.json', data)
+        //     .then(res => {
+        //         this.setState({loading: false});
+        //         this.props.history.push("/");
+        //     })
+        //     .catch(err => {
+        //         this.setState({loading: false});
+        //     });
     }
 
     formElementValueChangedHandler = (event, formElementKey) => {
