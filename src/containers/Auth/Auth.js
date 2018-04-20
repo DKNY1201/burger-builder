@@ -89,9 +89,9 @@ class Auth extends Component {
 
         let formIsValid = true;
 
-        for (let formElementKey in updatedOrderForm) {
-            formIsValid = updatedOrderForm[formElementKey].validation.valid && formIsValid;
-        }
+        // for (let formElementKey in updatedOrderForm) {
+        //     formIsValid = updatedOrderForm[formElementKey].validation.valid && formIsValid;
+        // }
 
         this.setState({controls: updatedOrderForm, formIsValid: formIsValid});
     }
@@ -128,7 +128,6 @@ class Auth extends Component {
             <div className={classes.Auth}>
                 {form}
             </div>
-
         );
     }
 }
