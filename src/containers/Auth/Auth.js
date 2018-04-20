@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
+import * as actions from '../../store/actions';
 
 class Auth extends Component {
     state = {
@@ -69,22 +72,9 @@ class Auth extends Component {
         return isValid;
     }
 
-    placeOrderHandler = (event) => {
+    authHandler = (event) => {
         event.preventDefault();
-        this.setState({loading: true});
-
-        const formData = {};
-        for (let formElementKey in this.state.controls) {
-            formData[formElementKey] = this.state.orderForm[formElementKey].value;
-        }
-
-        const data = {
-            ingredients: this.props.ings,
-            price: this.props.price,
-            customer: formData
-        };
-
-        this.props.onPurchaseOrder(data);
+        this.props.onAuth(this.state.controls['email'].value, this.state.controls['password'].value);
     }
 
     formElementValueChangedHandler = (event, formElementKey) => {
@@ -117,7 +107,7 @@ class Auth extends Component {
         }
 
         let form = (
-            <form onSubmit={this.placeOrderHandler}>
+            <form onSubmit={this.authHandler}>
                 {formElementArray.map(formElement => {
                     return <Input
                         key={formElement.id}
@@ -143,5 +133,11 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (email, password) => dispatch(actions.auth(email, password))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth);
 
