@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from '../../axios/axios-auth';
+import axios from 'axios';
 
 export const authStart = () => {
     return {
@@ -21,7 +21,7 @@ export const authFail = (error) => {
     }
 }
 
-export const auth = (email, password) => {
+export const auth = (email, password, isSignUp) => {
     return dispatch => {
 
         dispatch(authStart());
@@ -32,7 +32,13 @@ export const auth = (email, password) => {
             returnSecureToken: true
         };
 
-        axios.post('', authData)
+        let url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBJrLzFwteGXLsU_9BHs0gIrPWBIpkK-Vs";
+
+        if (!isSignUp) {
+            url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBJrLzFwteGXLsU_9BHs0gIrPWBIpkK-Vs";
+        }
+
+        axios.post(url, authData)
             .then(authData => {
                 console.log(authData);
                 dispatch(authSuccess(authData));
