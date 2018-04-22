@@ -8,7 +8,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import * as actions from '../../../store/actions';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
-import {updateObject} from '../../../shared/utility';
+import {updateObject, checkValidity} from '../../../shared/utility';
 
 class ContactData extends Component {
     state = {
@@ -110,33 +110,6 @@ class ContactData extends Component {
         formIsValid: false
     }
 
-    checkValidity(rules, value) {
-        if (!rules) {
-            return true;
-        }
-
-        let isValid = true;
-
-        if (rules.require) {
-            isValid = value.trim() !== '' && isValid;
-        }
-
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid;
-        }
-
-        if (rules.isEmail) {
-            const emailRegex = /^\S+@\S+\.\S+$/;
-            isValid = emailRegex.test(value);
-        }
-
-        return isValid;
-    }
-
     placeOrderHandler = (event) => {
         event.preventDefault();
 
@@ -159,7 +132,7 @@ class ContactData extends Component {
         const updatedOrderFormElement = updateObject(this.state.orderForm[formElementKey], {
             value: event.target.value,
             validation: updateObject(this.state.orderForm[formElementKey].validation, {
-                valid: this.checkValidity(this.state.orderForm[formElementKey].validation.rules,
+                valid: checkValidity(this.state.orderForm[formElementKey].validation.rules,
                     event.target.value)
             }),
             touch: true

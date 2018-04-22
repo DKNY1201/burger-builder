@@ -8,7 +8,7 @@ import classes from './Auth.css';
 import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import * as errors from '../../shared/error-code-to-message';
-import {updateObject} from '../../shared/utility';
+import {updateObject, checkValidity} from '../../shared/utility';
 
 class Auth extends Component {
     state = {
@@ -50,33 +50,6 @@ class Auth extends Component {
         isSignUp: true
     }
 
-    checkValidity(rules, value) {
-        if (!rules) {
-            return true;
-        }
-
-        let isValid = true;
-
-        if (rules.require) {
-            isValid = value.trim() !== '' && isValid;
-        }
-
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid;
-        }
-
-        if (rules.isEmail) {
-            const emailRegex = /^\S+@\S+\.\S+$/;
-            isValid = emailRegex.test(value);
-        }
-
-        return isValid;
-    }
-
     authHandler = (event) => {
         event.preventDefault();
         this.props.onAuth(this.state.controls['email'].value,
@@ -88,7 +61,7 @@ class Auth extends Component {
         const updatedOrderFormElement = updateObject(this.state.controls[formElementKey], {
             value: event.target.value,
             validation: updateObject(this.state.controls[formElementKey].validation, {
-                valid: this.checkValidity(this.state.controls[formElementKey].validation.rules,
+                valid: checkValidity(this.state.controls[formElementKey].validation.rules,
                     event.target.value)
             }),
             touch: true
