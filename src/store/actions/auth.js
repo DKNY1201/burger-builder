@@ -87,11 +87,11 @@ export const authCheckLoginState = () => {
             dispatch(logout());
         } else {
             const expirationDate = new Date(localStorage.getItem('expirationDate'));
-            if (expirationDate < new Date().getTime()) {
+            if (expirationDate <= new Date()) {
                 dispatch(logout());
             } else {
                 dispatch(authSuccess(token, localStorage.getItem('userId')));
-                dispatch(checkAuthTimeout(expirationDate.getSeconds() - new Date().getSeconds()));
+                dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 60));
             }
         }
     }
