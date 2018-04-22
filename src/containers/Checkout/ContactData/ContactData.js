@@ -7,7 +7,8 @@ import axios from '../../../axios/axios-orders';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import * as actions from '../../../store/actions';
-import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler'
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
+import {updateObject} from '../../../shared/utility';
 
 class ContactData extends Component {
     state = {
@@ -83,7 +84,8 @@ class ContactData extends Component {
                 value: '',
                 validation: {
                     rules: {
-                        require: true
+                        require: true,
+                        isEmail: true
                     },
                     valid: false
                 },
@@ -127,6 +129,11 @@ class ContactData extends Component {
             isValid = value.length <= rules.maxLength && isValid;
         }
 
+        if (rules.isEmail) {
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            isValid = emailRegex.test(value);
+        }
+
         return isValid;
     }
 
@@ -149,14 +156,18 @@ class ContactData extends Component {
     }
 
     formElementValueChangedHandler = (event, formElementKey) => {
-        const updatedOrderForm = {...this.state.orderForm};
-        const updatedOrderFormElement = {...updatedOrderForm[formElementKey]};
+        const updatedOrderFormElement = updateObject(this.state.orderForm[formElementKey], {
+            value: event.target.value,
+            validation: updateObject(this.state.orderForm[formElementKey].validation, {
+                valid: this.checkValidity(this.state.orderForm[formElementKey].validation.rules,
+                    event.target.value)
+            }),
+            touch: true
+        });
 
-        updatedOrderFormElement.value = event.target.value;
-        const isValid = this.checkValidity(updatedOrderFormElement.validation.rules, updatedOrderFormElement.value);
-        updatedOrderFormElement.validation.valid = isValid;
-        updatedOrderFormElement.touch = true;
-        updatedOrderForm[formElementKey] = updatedOrderFormElement;
+        const updatedOrderForm = updateObject(this.state.orderForm, {
+            [formElementKey]: updatedOrderFormElement
+        });
 
         let formIsValid = true;
 

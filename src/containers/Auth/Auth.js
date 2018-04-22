@@ -7,7 +7,8 @@ import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
 import * as actions from '../../store/actions';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import * as errors from '../../utility/error-code-to-message';
+import * as errors from '../../shared/error-code-to-message';
+import {updateObject} from '../../shared/utility';
 
 class Auth extends Component {
     state = {
@@ -84,20 +85,24 @@ class Auth extends Component {
     }
 
     formElementValueChangedHandler = (event, formElementKey) => {
-        const updatedOrderForm = {...this.state.controls};
-        const updatedOrderFormElement = {...updatedOrderForm[formElementKey]};
+        const updatedOrderFormElement = updateObject(this.state.controls[formElementKey], {
+            value: event.target.value,
+            validation: updateObject(this.state.controls[formElementKey].validation, {
+                valid: this.checkValidity(this.state.controls[formElementKey].validation.rules,
+                    event.target.value)
+            }),
+            touch: true
+        });
 
-        updatedOrderFormElement.value = event.target.value;
-        const isValid = this.checkValidity(updatedOrderFormElement.validation.rules, updatedOrderFormElement.value);
-        updatedOrderFormElement.validation.valid = isValid;
-        updatedOrderFormElement.touch = true;
-        updatedOrderForm[formElementKey] = updatedOrderFormElement;
+        const updatedOrderForm = updateObject(this.state.controls, {
+            [formElementKey]: updatedOrderFormElement
+        });
 
         let formIsValid = true;
 
-        // for (let formElementKey in updatedOrderForm) {
-        //     formIsValid = updatedOrderForm[formElementKey].validation.valid && formIsValid;
-        // }
+        for (let formElementKey in updatedOrderForm) {
+            formIsValid = updatedOrderForm[formElementKey].validation.valid && formIsValid;
+        }
 
         this.setState({controls: updatedOrderForm, formIsValid: formIsValid});
     }
