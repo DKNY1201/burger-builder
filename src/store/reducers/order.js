@@ -18,21 +18,21 @@ const reducer = (state = initialState, action) => {
             };
             return updateObject(state, updatingProperties);
         case actionTypes.PURCHASE_BURGER_FAIL:
-            var updatingProperties = {
+            var updatingProp = {
                 loading: false,
                 purchased: true
             };
-            return updateObject(state, updatingProperties);
+            return updateObject(state, updatingProp);
         case actionTypes.PURCHASE_BURGER_START:
             return updateObject(state, {loading: true});
         case actionTypes.PURCHASE_BURGER_INIT:
             return updateObject(state, {purchased: false});
         case actionTypes.FETCH_ORDER_SUCCESS:
-            var updatingProperties = {
+            var updatingProps = {
                 orders: action.orders,
                 loading: false
             };
-            return updateObject(state, updatingProperties);
+            return updateObject(state, updatingProps);
         case actionTypes.FETCH_ORDER_FAIL:
             return updateObject(state, {loading: false});
         case actionTypes.FETCH_ORDER_START:
